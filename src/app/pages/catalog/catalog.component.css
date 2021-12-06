@@ -1,0 +1,32 @@
+
+.info-text {
+  text-align: center;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+.mat-paginator {
+  margin-top: 1rem;
+}
+
+.content {
+  padding: 16px;
+}
+
+.content > mat-card {
+  width: 200px;
+
+}
+
+img {
+  width: 100%;
+  box-shadow: 5px 5px 10px grey;
+  border-radius: 5px;
+}
+
+img:hover {
+  transform: scale(1.1);
+  transition: 0.4s;
+}

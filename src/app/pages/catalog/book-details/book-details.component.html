@@ -1,0 +1,37 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+
+<mat-card>
+  <div fxLayout="row wrap" fxLayoutGap="30px grid">
+    <div class="cover">
+      <img [src]="book.imagePath" [alt]="book.title" width="170px" height="360px">
+    </div>
+    <div class="info">
+      <h1>{{book.title}}</h1>
+      <table>
+        <tbody>
+          <tr>
+            <td class="bold">Autor: </td>
+            <td>{{ book.author }}</td>
+          </tr>
+          <tr>
+            <td class="bold">Rok wydania: </td>
+            <td>{{ book.year }}</td>
+          </tr>
+          <tr>
+            <td class="bold">Kraj pochodzenia: </td>
+            <td>{{ book.country }}</td>
+          </tr>
+          <tr>
+            <td class="bold">Opis: </td>
+            <td>{{ book.story }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="forAuth" *ngIf="userIsAuthenticated && userId == book.creator">
+        <a mat-button [routerLink]="['/edit', book.id]">Edytuj</a>
+        <button mat-button color="warn" (click)="onDelete(book.id)">Usuń</button>
+      </div>
+      <button mat-raised-button color="accent" class="goBack" (click)="goToCatalog()">Powrót</button>
+    </div>
+  </div>
+</mat-card>

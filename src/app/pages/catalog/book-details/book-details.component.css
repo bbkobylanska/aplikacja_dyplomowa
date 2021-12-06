@@ -1,0 +1,36 @@
+mat-card {
+  margin-top: 1rem;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+.goBack
+{
+   position: absolute;
+   right: 25px;
+   bottom: 25px;
+}
+
+.cover {
+  width: 20%;
+}
+
+img {
+  width: 100%;
+  box-shadow: 5px 5px 10px grey;
+  border-radius: 5px;
+}
+
+.info {
+  width: 60%;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.forAuth {
+  margin-top: 2rem;
+}

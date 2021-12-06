@@ -1,0 +1,17 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+
+
+<div class="content" *ngIf="books.length > 0 && !isLoading">
+  <div fxLayout="row wrap" fxLayoutGap="20px grid">
+    <div fxFlex="20%" fxFlex.xs="100%" fxFlex.sm="30%" *ngFor="let book of books">
+      <a [routerLink]="['/book', book.id]">
+        <img [src]="book.imagePath" [alt]="book.title" width="170px" height="320px">
+      </a>
+    </div>
+  </div>
+</div>
+
+<mat-paginator [length]="totalBooks" [pageSize]="booksPerPage" [pageSizeOptions]="pageSizeOptions"
+  (page)="onChangedPage($event)" *ngIf="books.length > 0"></mat-paginator>
+
+<p class="info-text" *ngIf="books.length <=0 && !isLoading">Brak książek w katalogu</p>
